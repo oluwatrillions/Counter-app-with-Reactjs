@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function App () {
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  const [count, setCount] = useState(0)
+
+  function Increment (){
+    setCount(prev=> prev + 1)
+  }
+
+  function Decrement (){
+    setCount(prev=> prev - 1)
+  }
+
+  return <main>
+          <button className='addBtn' onClick={Decrement}>Decrease</button>
+          <span> {count} </span>
+          <button className='subBtn' onClick={Increment}>Increase</button>
+      </main> 
+}
+
+ReactDOM.render(<App />,document.getElementById('root'));
