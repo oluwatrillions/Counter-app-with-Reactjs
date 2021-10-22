@@ -16,7 +16,7 @@ function App () {
 
   return <main>
             <button className='addBtn' onClick={Decrement}>Decrease</button>
-            <span> {count} </span>
+            <span>{count}</span>
             <button className='subBtn' onClick={Increment}>Increase</button>
          </main> 
 }
